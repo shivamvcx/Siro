@@ -1,0 +1,44 @@
+# ==============================================================================
+# Siro - .gitignore
+# ==============================================================================
+
+# Rust / Cargo build artifacts
+/target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# Packaged distribution binaries & installers
+/dist/
+*.exe
+*.msi
+*.pdb
+*.wixobj
+*.wixpdb
+
+# Agent tooling, skills, session history, and lock files
+/.agents/
+skills-lock.json
+
+# Agent-generated audit, contract, and analysis directories
+/audit/
+/rca/
+/ui_audit/
+/Miro Example/
+
+# Temporary debug screenshots & caches
+debug_dock_screenshot.png
+*.png.tmp
+
+# Ignore all agent/transient markdown notes and docs across the repo
+# Only the master context file (PROJECT_CONTEXT.md) and README.md are tracked
+*.md
+!PROJECT_CONTEXT.md
+!README.md
+
+# Operating System and IDE files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+.vscode/
+.idea/

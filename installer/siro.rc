@@ -1,0 +1,6 @@
+#define RT_MANIFEST 24
+#define APP_MANIFEST 1
+
+1 ICON "app_icon.ico"
+
+APP_MANIFEST RT_MANIFEST "app.manifest"

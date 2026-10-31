@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Siro" Language="1033" Version="0.1.0.0" Manufacturer="Siro Project Team" UpgradeCode="7E5D3FA1-8D4C-4091-8FA8-823126DDFE14">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Icon Id="AppIcon" SourceFile="installer\app_icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon" />
+
+    <Feature Id="ProductFeature" Title="Siro" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Siro" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Siro" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="72E4459C-338A-4217-B9C0-890334800002">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Siro"
+                  Description="Native STEM Whiteboard &amp; Planner"
+                  Target="[#SiroExe]"
+                  WorkingDirectory="INSTALLFOLDER"
+                  Icon="AppIcon" />
+        <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Siro" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="MainExecutable" Guid="31E09428-A427-4638-9DC2-234220300001">
+        <File Id="SiroExe" Source="target\release\siro.exe" KeyPath="yes" />
+        <ProgId Id="Siro.Project" Description="Siro Whiteboard Project" Icon="SiroExe" IconIndex="0">
+          <Extension Id="siro" ContentType="application/x-siro">
+            <Verb Id="open" Command="Open with Siro" TargetFile="SiroExe" Argument="&quot;%1&quot;" />
+          </Extension>
+        </ProgId>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
