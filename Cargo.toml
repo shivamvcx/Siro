@@ -5,6 +5,7 @@ edition = "2021"
 default-run = "siro"
 authors = ["Siro Project Team"]
 description = "Lightweight, offline STEM whiteboard and project planner for hardware builders"
+license = "AGPL-3.0-only"
 
 [dependencies]
 eframe = { version = "0.31", default-features = false, features = ["wgpu", "default_fonts", "persistence"] }

@@ -20,7 +20,7 @@
     <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/100%25-Rust-DEA584?style=flat-square&logo=rust&logoColor=white" alt="100% Rust" /></a>
     <a href="#"><img src="https://img.shields.io/badge/Windows-native-0078D6?style=flat-square&logo=windows&logoColor=white" alt="Windows Native" /></a>
     <a href="https://wgpu.rs/"><img src="https://img.shields.io/badge/graphics-wgpu-8A2BE2?style=flat-square" alt="wgpu Native" /></a>
-    <a href="#"><img src="https://img.shields.io/badge/license-MIT%20%2F%20Apache--2.0-blue?style=flat-square" alt="License" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue?style=flat-square" alt="License: AGPL-3.0" /></a>
     <a href="#"><img src="https://img.shields.io/badge/status-beta-f59e0b?style=flat-square" alt="Status Beta" /></a>
     <a href="#"><img src="https://img.shields.io/badge/100%25-offline-2ea44f?style=flat-square" alt="100% Offline" /></a>
     <a href="#"><img src="https://img.shields.io/badge/telemetry-zero-0969da?style=flat-square" alt="Zero Telemetry" /></a>
@@ -105,8 +105,8 @@ siro.bat
 
 ### Compilation
 ```powershell
-# Clone your repository
-git clone https://github.com/your-username/siro.git
+# Clone the repository
+git clone https://github.com/shivamvcx/siro.git
 cd siro
 
 # Run in debug mode
@@ -147,11 +147,8 @@ For a comprehensive technical breakdown of all internal subsystems, invariants, 
 
 ## 📄 License
 
-Dual-licensed under either:
-- **MIT License** ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-- **Apache License, Version 2.0** ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-
-at your option.
+Licensed under the **GNU Affero General Public License Version 3** (AGPL-3.0).  
+See the [LICENSE](LICENSE) file for the full license text.
 
 ---
 
